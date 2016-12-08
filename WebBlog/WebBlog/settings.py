@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Django settings for WebBlog project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,11 @@ WSGI_APPLICATION = 'WebBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'webblog',    ## 数据库名称
+        'USER': 'guomaofei',
+        'PASSWORD': '123456',    ## 安装 mysql 数据库时，输入的 root 用户的密码
+        'HOST': 'localhost',
     }
 }
 
